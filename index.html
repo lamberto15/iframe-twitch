@@ -8,23 +8,21 @@
 </head>
 <body>
   
-    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-    <div id="wwqq"></div>
-    <script type="text/javascript">
-      var options = {
-        width: '100%',
-        channel: "monstercat",
-        parent: ["embed.example.com", "othersite.example.com"],
-        allowfullscreen: false,
+  <div id="twitch-embed" style="height: 100%"></div>
 
-      };
-      var player = new Twitch.Player("wwqq", options);
-      player.setVolume(0.5);
-    </script>
-    <iframe src="https://www.twitch.tv/embed/lamby_95/chat?parent=lamberto15.github.io"
-      height="500"
-      width="350">
-</iframe>
-</iframe>
+  <!-- Load the Twitch embed JavaScript file -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+  <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+  <script type="text/javascript">
+    new Twitch.Embed("twitch-embed", {
+      height: '100%',
+      width: '100%',
+      channel: "monstercat",
+      // Only needed if this page is going to be embedded on other websites
+      parent: ["embed.example.com", "othersite.example.com"],
+      layout:'</li></ul>'
+    });
+  </script>
 </body>
 </html>
